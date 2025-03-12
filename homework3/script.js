@@ -76,7 +76,7 @@ function addTextBox() {
             let space = document.createElement('br')
             textBox.type = 'number'
             textBox.id = 'addedIncome'
-            textBox.onchange = sumAddedIncome
+            textBox.oninput = sumIncome
             space.id = 'space'
             document.getElementById('incomeDiv').appendChild(space)
             document.getElementById('incomeDiv').appendChild(textBox)
@@ -87,7 +87,7 @@ function addTextBox() {
             let space2 = document.createElement('br')
             textBox2.type = 'number'
             textBox2.id = 'addedIncome2'
-            textBox2.onchange = sumAddedIncome2
+            textBox2.oninput = sumIncome
             space2.id = 'space2'
             document.getElementById('incomeDiv').appendChild(space2)
             document.getElementById('incomeDiv').appendChild(textBox2)
@@ -106,6 +106,7 @@ function removeTextBox() {
             space.remove()
             textBox.remove()
             textBoxCount--
+            sumIncome()
             break
         case 2:
             let textBox2 = document.getElementById('addedIncome2')
@@ -113,6 +114,7 @@ function removeTextBox() {
             space2.remove()
             textBox2.remove()
             textBoxCount--
+            sumIncome()
             break
         default:
             break
@@ -120,65 +122,75 @@ function removeTextBox() {
 }
 
 function sumIncome() {
-    let income = document.getElementById('income').value
-    let totalIncome = document.getElementById('totalIncome')
-
-    let ans = parseInt(totalIncome.value) ? parseInt(totalIncome.value) : 0
-
-    totalIncome.value = ans + parseInt(income)
-}
-
-function sumAddedIncome() {
-    let addedIncome = document.getElementById('addedIncome').value
-    let totalIncome = document.getElementById('totalIncome')
-
-    let ans = parseInt(totalIncome.value) ? parseInt(totalIncome.value) : 0
-
-    console.log('ans: ', addedIncome)
-
-    if (addedIncome) {
-        ans += parseInt(addedIncome)
+    let totalIncome = parseInt(0)
+    switch (textBoxCount) {
+        case 0:
+            let income = parseInt(document.getElementById('income').value)
+            if (income) {
+                totalIncome += income
+            }
+            break
+        case 1:
+            let income1 = parseInt(document.getElementById('income').value)
+            let addedIncome = parseInt(document.getElementById('addedIncome').value)
+            if (income1) {
+                totalIncome += income1
+            }
+            if (addedIncome) {
+                totalIncome += addedIncome
+            }
+            break
+        case 2:
+            let income12 = parseInt(document.getElementById('income').value)
+            let addedIncome12 = parseInt(document.getElementById('addedIncome').value)
+            let addedIncome2 = parseInt(document.getElementById('addedIncome2').value)
+            if (income12) {
+                totalIncome += income12
+            }
+            if (addedIncome12) {
+                totalIncome += addedIncome12
+            }
+            if (addedIncome2) {
+                totalIncome += addedIncome2
+            }
+            break
+        default:
+            break
     }
 
-    totalIncome.value = ans
-}
-
-function sumAddedIncome2() {
-    let addedIncome = document.getElementById('addedIncome2').value
-    let totalIncome = document.getElementById('totalIncome')
-
-    let ans = parseInt(totalIncome.value) ? parseInt(totalIncome.value) : 0
-
-    console.log('ans: ', addedIncome)
-
-    if (addedIncome) {
-        ans += parseInt(addedIncome)
-    }
-
-    totalIncome.value = ans
+    document.getElementById('totalIncome').value = totalIncome
+    calculateTax()
 }
 
 function calculateTax() {
     let income = parseInt(document.getElementById('totalIncome').value)
+    let percent = 0
     let tax = 0
     if (income <= 150000) {
+        percent = 0
         tax = 0
     } else if (income <= 300000) {
+        percent = 5
         tax = (income - 150000) * 0.05
     } else if (income <= 500000) {
+        percent = 10
         tax = 7500 + (income - 300000) * 0.1
     } else if (income <= 750000) {
+        percent = 15
         tax = 27500 + (income - 500000) * 0.15
     } else if (income <= 1000000) {
+        percent = 20
         tax = 65000 + (income - 750000) * 0.2
     } else if (income <= 2000000) {
+        percent = 25
         tax = 115000 + (income - 1000000) * 0.25
     } else if (income <= 5000000) {
+        percent = 30
         tax = 365000 + (income - 2000000) * 0.3
     } else {
+        percent = 35
         tax = 1265000 + (income - 5000000) * 0.35
     }
-
-    let taxElement = document.getElementById('tax')
-    taxElement.innerHTML = 'ภาษีที่ต้องจ่าย: ' + tax + ' บาท'
+    document.getElementById('totalTax').value = percent
+    document.getElementById('totalTaxAmount').value = tax
 }
