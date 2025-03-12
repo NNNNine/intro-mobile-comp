@@ -442,11 +442,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/nnine/Documents/GitHub/intro-mobile-comp/ToDoAPI/ToDoAPI.csproj",
-      "projectName": "ToDoAPI",
-      "projectPath": "/Users/nnine/Documents/GitHub/intro-mobile-comp/ToDoAPI/ToDoAPI.csproj",
+      "projectUniqueName": "/Users/nnine/Documents/GitHub/intro-mobile-comp/ToDo/ToDo.csproj",
+      "projectName": "ToDo",
+      "projectPath": "/Users/nnine/Documents/GitHub/intro-mobile-comp/ToDo/ToDo.csproj",
       "packagesPath": "/Users/nnine/.nuget/packages/",
-      "outputPath": "/Users/nnine/Documents/GitHub/intro-mobile-comp/ToDoAPI/obj/",
+      "outputPath": "/Users/nnine/Documents/GitHub/intro-mobile-comp/ToDo/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/nnine/.nuget/NuGet/NuGet.Config"

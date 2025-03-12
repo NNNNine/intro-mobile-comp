@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace ToDoAPI.Controllers;
+namespace ToDo.Controllers;
 
 [ApiController]
 [Route("[controller]")]

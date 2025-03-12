@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RCzDPZSCL8QK22WWS+JD4oY4BhOWtydUpevBURoPTM13xY9P8dWwKxC2y13zNTY8tY/Ts2FXYnkanXKW/jDy1Q==",
+  "dgSpecHash": "9oD5yAQkJOtRNSLFooE8saC12aWPJq9b0R1mdK92u8tX+0UsQDr0orHQWHIMNYeY/y/PtfD4rh42A1795H4A9Q==",
   "success": true,
-  "projectFilePath": "/Users/nnine/Documents/GitHub/intro-mobile-comp/ToDoAPI/ToDoAPI.csproj",
+  "projectFilePath": "/Users/nnine/Documents/GitHub/intro-mobile-comp/ToDo/ToDo.csproj",
   "expectedPackageFiles": [
     "/Users/nnine/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "/Users/nnine/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
