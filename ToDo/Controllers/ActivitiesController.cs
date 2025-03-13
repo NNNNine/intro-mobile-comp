@@ -3,7 +3,7 @@ using ToDo.Models;
 
 using Microsoft.AspNetCore.Authorization;
 
-namespace ToDo.Controllers
+namespace ToDo.Controllers;
 
 [ApiController]
 [Route("[controller]")]
