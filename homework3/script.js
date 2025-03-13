@@ -94,6 +94,10 @@ function removeTextBox() {
 function calculateTotalIncome() {
     let total = 0;
     document.querySelectorAll('.income-input').forEach(input => {
+        // if input.value is negative, set it to 0
+        if (parseInt(input.value) < 0) {
+            input.value = 0;
+        }
         total += input.value ? parseInt(input.value) : 0;
     });
     document.getElementById('totalIncome').value = total;
