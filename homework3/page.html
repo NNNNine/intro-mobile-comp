@@ -34,7 +34,7 @@
             <div id="incomeDiv">
                 <label for="income">รายได้ (บาท):</label>
                 <br>
-                <input type="number" id="income1" class="income-input" onchange="calculateTotalIncome()">
+                <input type="number" id="income1" class="income-input" oninput="calculateTotalIncome()" placeholder="รายได้ที่ 1">
                 <button type="button" onclick="addTextBox()">+</button>
                 <button type="button" onclick="removeTextBox()">-</button>
             </div>

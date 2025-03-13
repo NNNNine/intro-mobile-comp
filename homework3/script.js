@@ -77,7 +77,7 @@ function addTextBox() {
         newInput.id = 'income' + textBoxCount;
         newInput.className = 'income-input';
         newInput.placeholder = 'รายได้ที่ ' + textBoxCount;
-        newInput.onchange = calculateTotalIncome;
+        newInput.oninput = calculateTotalIncome;
         document.getElementById('incomeDiv').appendChild(newInput);
     }
 }
