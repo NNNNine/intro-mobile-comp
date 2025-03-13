@@ -78,7 +78,7 @@ namespace ToDo.Models
                     .HasMaxLength(24)
                     .IsFixedLength();
 
-                entity.Property(e => e.Tiltle).HasMaxLength(100);
+                entity.Property(e => e.Title).HasMaxLength(100);
             });
 
             OnModelCreatingPartial(modelBuilder);

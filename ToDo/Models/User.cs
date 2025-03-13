@@ -14,7 +14,7 @@ namespace ToDo.Models
         public string NationalId { get; set; } = null!;
         public string Salt { get; set; } = null!;
         public string HashedPassword { get; set; } = null!;
-        public string Tiltle { get; set; } = null!;
+        public string Title { get; set; } = null!;
         public string FirstName { get; set; } = null!;
         public string LastName { get; set; } = null!;
 
