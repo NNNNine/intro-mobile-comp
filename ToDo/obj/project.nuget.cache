@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xWjadbTeTSC8KrfD+z+oHT474/pLFBoZQMJiVFNERPth+TCCxJ+2E8rUrhjJN4SXlnC7UrebMtMpg7F0Tg9KvA==",
+  "dgSpecHash": "JaQPLtl6XW8gMiLGcUjbEMEvW+tiatpx+VjNcRJEeRxp9OylxPEOyQO+1McxF+8lo7Tq31mxFpgNP+DMysRPvQ==",
   "success": true,
   "projectFilePath": "/Users/nnine/Documents/GitHub/intro-mobile-comp/ToDo/ToDo.csproj",
   "expectedPackageFiles": [
@@ -32,6 +32,7 @@
     "/Users/nnine/.nuget/packages/microsoft.netcore.targets/1.1.0/microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "/Users/nnine/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
     "/Users/nnine/.nuget/packages/mysqlconnector/2.1.2/mysqlconnector.2.1.2.nupkg.sha512",
+    "/Users/nnine/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
     "/Users/nnine/.nuget/packages/pomelo.entityframeworkcore.mysql/6.0.3/pomelo.entityframeworkcore.mysql.6.0.3.nupkg.sha512",
     "/Users/nnine/.nuget/packages/swashbuckle.aspnetcore/6.5.0/swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "/Users/nnine/.nuget/packages/swashbuckle.aspnetcore.swagger/6.5.0/swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",

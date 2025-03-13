@@ -44,13 +44,7 @@ public class UsersController : ControllerBase
         var user = new Models.User
         {
             NationalId = data.NationalId,
-            Salt = Convert.ToBase64String(KeyDerivation.Pbkdf2(
-                password: data.Password,
-                salt: Encoding.UTF8.GetBytes(Program.SecurityKey),
-                prf: KeyDerivationPrf.HMACSHA256,
-                iterationCount: 10000,
-                numBytesRequested: 256 / 8
-            )),
+            Salt = Encoding.UTF8.GetBytes(Program.SecurityKey).ToString(),
             HashedPassword = Convert.ToBase64String(KeyDerivation.Pbkdf2(
                 password: data.Password,
                 salt: Encoding.UTF8.GetBytes(Program.SecurityKey),
