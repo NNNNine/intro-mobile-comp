@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.WebHost.UseUrls();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -50,5 +50,5 @@ app.Run();
 
 public partial class Program {
     // random string (length = 16)
-    public static string SecurityKey = "EYkansd8a9s8d7a9";
+    public static string SecurityKey = "EYkansd8a9s8d7a9EYkansd8a9s8d7a9";
 }

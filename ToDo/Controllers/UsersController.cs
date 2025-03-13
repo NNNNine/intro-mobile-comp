@@ -44,7 +44,7 @@ public class UsersController : ControllerBase
         var user = new Models.User
         {
             NationalId = data.NationalId,
-            Salt = Encoding.UTF8.GetBytes(Program.SecurityKey).ToString(),
+            Salt = Program.SecurityKey,
             HashedPassword = Convert.ToBase64String(KeyDerivation.Pbkdf2(
                 password: data.Password,
                 salt: Encoding.UTF8.GetBytes(Program.SecurityKey),
