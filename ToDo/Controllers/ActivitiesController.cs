@@ -30,6 +30,7 @@ public class ActivitiesController : ControllerBase
 
     [Route("{id}")]
     [HttpGet]
+    [Authorize(Roles = "user")]
     public IActionResult Get(uint id)
     {
         var db = new ToDoDbContext();
@@ -41,6 +42,7 @@ public class ActivitiesController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Roles = "user")]
     public IActionResult Post([FromBody] DTOs.Activity data)
     {
         var db = new ToDoDbContext();
@@ -59,6 +61,7 @@ public class ActivitiesController : ControllerBase
 
     [Route("{id}")]
     [HttpPut]
+    [Authorize(Roles = "user")]
     public IActionResult Put(uint id, [FromBody] DTOs.Activity data)
     {
         var db = new ToDoDbContext();
@@ -76,6 +79,7 @@ public class ActivitiesController : ControllerBase
 
     [Route("{id}")]
     [HttpDelete]
+    [Authorize(Roles = "user")]
     public IActionResult Delete(uint id)
     {
         var db = new ToDoDbContext();
