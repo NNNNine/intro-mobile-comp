@@ -49,8 +49,9 @@ public class ActivitiesController : ControllerBase
 
         var activity = new Models.Activity
         {
-            Name = data.Name,
-            When = data.When
+            Name = data.Name ?? "No Name",
+            WhatTime = data.WhatTime,
+            UserId = uint.Parse(User.FindFirst(System.Security.Claims.ClaimTypes.Name)?.Value ?? "0")
         };
 
         db.Activity.Add(activity);
@@ -69,12 +70,12 @@ public class ActivitiesController : ControllerBase
         var activity = db.Activity.Find(id);
         if (activity == null) return NotFound();
 
-        activity.Name = data.Name;
-        activity.When = data.When;
+        activity.Name = data.Name ?? "No Name";
+        activity.WhatTime = data.WhatTime;
 
         db.SaveChanges();
 
-        return Ok();
+        return Ok(activity);
     }
 
     [Route("{id}")]

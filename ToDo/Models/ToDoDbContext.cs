@@ -23,62 +23,66 @@ namespace ToDo.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseMySql("server=localhost;port=4500;user=root;password=admin1234;database=todo", Microsoft.EntityFrameworkCore.ServerVersion.Parse("11.8.1-mariadb"));
+                optionsBuilder.UseMySql("server=localhost;port=3307;user=root;password=123456;database=mobile_comp", Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.11.11-mariadb"));
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.UseCollation("utf8mb4_thai_520_w2")
+            modelBuilder.UseCollation("utf8mb4_general_ci")
                 .HasCharSet("utf8mb4");
 
             modelBuilder.Entity<Activity>(entity =>
             {
-                entity.ToTable("activity");
-
-                entity.HasIndex(e => e.UserId, "UserId");
+                entity.HasIndex(e => e.UserId, "Activity_User_FK");
 
                 entity.Property(e => e.Id).HasColumnType("int(10) unsigned");
 
-                entity.Property(e => e.Name).HasMaxLength(100);
+                entity.Property(e => e.Name)
+                    .HasMaxLength(100)
+                    .UseCollation("utf8mb4_thai_520_w2");
 
                 entity.Property(e => e.UserId).HasColumnType("int(10) unsigned");
 
-                entity.Property(e => e.When)
-                    .HasColumnType("datetime")
-                    .HasDefaultValueSql("'0000-00-00 00:00:00'");
+                entity.Property(e => e.WhatTime).HasColumnType("datetime");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.Activity)
                     .HasForeignKey(d => d.UserId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK1_Activity_User");
+                    .HasConstraintName("Activity_User_FK");
             });
 
             modelBuilder.Entity<User>(entity =>
             {
-                entity.ToTable("user");
-
                 entity.Property(e => e.Id).HasColumnType("int(10) unsigned");
 
-                entity.Property(e => e.FirstName).HasMaxLength(100);
+                entity.Property(e => e.FirstName)
+                    .HasMaxLength(100)
+                    .UseCollation("utf8mb4_thai_520_w2");
 
                 entity.Property(e => e.HashedPassword)
                     .HasMaxLength(44)
-                    .IsFixedLength();
+                    .IsFixedLength()
+                    .UseCollation("utf8mb4_thai_520_w2");
 
-                entity.Property(e => e.LastName).HasMaxLength(100);
+                entity.Property(e => e.LastName)
+                    .HasMaxLength(100)
+                    .UseCollation("utf8mb4_thai_520_w2");
 
                 entity.Property(e => e.NationalId)
                     .HasMaxLength(13)
-                    .IsFixedLength();
+                    .IsFixedLength()
+                    .UseCollation("utf8mb4_thai_520_w2");
 
                 entity.Property(e => e.Salt)
                     .HasMaxLength(24)
-                    .IsFixedLength();
+                    .IsFixedLength()
+                    .UseCollation("utf8mb4_thai_520_w2");
 
-                entity.Property(e => e.Title).HasMaxLength(100);
+                entity.Property(e => e.Title)
+                    .HasMaxLength(100)
+                    .UseCollation("utf8mb4_thai_520_w2");
             });
 
             OnModelCreatingPartial(modelBuilder);

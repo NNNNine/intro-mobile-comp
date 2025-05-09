@@ -31,7 +31,7 @@ public class TokensController : ControllerBase
         if (user == null) return Unauthorized();
 
         string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
-            password: data.Password,
+            password: data.Password ?? "123456",
             salt: Encoding.UTF8.GetBytes(user.Salt),
             prf: KeyDerivationPrf.HMACSHA256,
             iterationCount: 10000,

@@ -43,20 +43,20 @@ public class UsersController : ControllerBase
 
         var user = new Models.User
         {
-            NationalId = data.NationalId,
+            NationalId = data.NationalId ?? "1234567890123",
             Salt = Program.SecurityKey,
             HashedPassword = Convert.ToBase64String(KeyDerivation.Pbkdf2(
-                password: data.Password,
+                password: data.Password ?? "123456",
                 salt: Encoding.UTF8.GetBytes(Program.SecurityKey),
                 prf: KeyDerivationPrf.HMACSHA256,
                 iterationCount: 10000,
                 numBytesRequested: 256 / 8
             )),
-            Title = data.Title,
-            FirstName = data.FirstName,
-            LastName = data.LastName
+            Title = data.Title ?? "Mr.",
+            FirstName = data.FirstName ?? "John",
+            LastName = data.LastName ?? "Doe"
         };
-
+        
         db.User.Add(user);
         db.SaveChanges();
 
