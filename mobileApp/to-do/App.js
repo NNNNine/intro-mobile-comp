@@ -1,5 +1,5 @@
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createStackNavigator } from "@react-navigation/stack";
 import { createDrawerNavigator, DrawerItem } from "@react-navigation/drawer";
 import { View, Text } from "react-native";
 import * as SecureStore from "expo-secure-store";
@@ -8,7 +8,7 @@ import Main from "./screens/Main";
 import SignIn from "./screens/SignIn";
 import Credit from "./screens/Credit";
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
 function CustomDrawerContent(props) {

@@ -22,4 +22,3 @@ services:
     environment:
       - DOCKER_DEFAULT_PLATFORM=linux/amd64
       - PMA_HOST=mariadb
-      - DOCKER_DEFAULT_PLATFORM=linux/amd64
