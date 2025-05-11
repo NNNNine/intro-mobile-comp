@@ -9,8 +9,11 @@ function Credit(props) {
         <div style={{ marginLeft: '200px', padding: '20px' }}>
             <h1>Credit Page</h1>
         </div>
-        <p>
-            test test test
+        <p style={{ marginLeft: '100px'}}>
+            จิรพิชญ์ แสงพลาย 6434413323
+        </p>
+        <p style={{ marginLeft: '100px'}}>
+            พีรวิชญ์ ศรีสันต์ 6434463723
         </p>
     </div>)
 }
