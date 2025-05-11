@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "APgkSR/VZGoe4OgXkzymHc0DXUoGtBmMxXVGLLPfRFaoSJDUtpraKtDz2zEDFnv6wnE4Sb0qFqUYtS7bDSr3bg==",
+  "dgSpecHash": "uxI3SNwz8VE=",
   "success": true,
   "projectFilePath": "/Users/nnine/Documents/GitHub/intro-mobile-comp/ToDo/ToDo.csproj",
   "expectedPackageFiles": [
@@ -46,7 +46,10 @@
     "/Users/nnine/.nuget/packages/system.security.cryptography.cng/4.5.0/system.security.cryptography.cng.4.5.0.nupkg.sha512",
     "/Users/nnine/.nuget/packages/system.text.encoding/4.3.0/system.text.encoding.4.3.0.nupkg.sha512",
     "/Users/nnine/.nuget/packages/system.text.encodings.web/4.7.2/system.text.encodings.web.4.7.2.nupkg.sha512",
-    "/Users/nnine/.nuget/packages/system.text.json/4.7.2/system.text.json.4.7.2.nupkg.sha512"
+    "/Users/nnine/.nuget/packages/system.text.json/4.7.2/system.text.json.4.7.2.nupkg.sha512",
+    "/Users/nnine/.nuget/packages/microsoft.netcore.app.ref/6.0.36/microsoft.netcore.app.ref.6.0.36.nupkg.sha512",
+    "/Users/nnine/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.36/microsoft.aspnetcore.app.ref.6.0.36.nupkg.sha512",
+    "/Users/nnine/.nuget/packages/microsoft.netcore.app.host.osx-arm64/6.0.36/microsoft.netcore.app.host.osx-arm64.6.0.36.nupkg.sha512"
   ],
   "logs": []
 }

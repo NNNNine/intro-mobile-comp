@@ -20,5 +20,6 @@ services:
     ports:
       - 9999:80
     environment:
+      - DOCKER_DEFAULT_PLATFORM=linux/amd64
       - PMA_HOST=mariadb
       - DOCKER_DEFAULT_PLATFORM=linux/amd64
