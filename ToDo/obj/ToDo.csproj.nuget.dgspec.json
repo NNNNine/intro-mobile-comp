@@ -1,26 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "/Users/nnine/Documents/GitHub/intro-mobile-comp/ToDo/ToDo.csproj": {}
+    "C:\\Users\\camps\\OneDrive\\Desktop\\intro-mobile-comp\\ToDo\\ToDo.csproj": {}
   },
   "projects": {
-    "/Users/nnine/Documents/GitHub/intro-mobile-comp/ToDo/ToDo.csproj": {
+    "C:\\Users\\camps\\OneDrive\\Desktop\\intro-mobile-comp\\ToDo\\ToDo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/nnine/Documents/GitHub/intro-mobile-comp/ToDo/ToDo.csproj",
+        "projectUniqueName": "C:\\Users\\camps\\OneDrive\\Desktop\\intro-mobile-comp\\ToDo\\ToDo.csproj",
         "projectName": "ToDo",
-        "projectPath": "/Users/nnine/Documents/GitHub/intro-mobile-comp/ToDo/ToDo.csproj",
-        "packagesPath": "/Users/nnine/.nuget/packages/",
-        "outputPath": "/Users/nnine/Documents/GitHub/intro-mobile-comp/ToDo/obj/",
+        "projectPath": "C:\\Users\\camps\\OneDrive\\Desktop\\intro-mobile-comp\\ToDo\\ToDo.csproj",
+        "packagesPath": "C:\\Users\\camps\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\camps\\OneDrive\\Desktop\\intro-mobile-comp\\ToDo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/nnine/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\camps\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "/opt/homebrew/Cellar/dotnet/9.0.101/libexec/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -33,13 +32,7 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net6.0": {
@@ -83,20 +76,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.36, 6.0.36]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.osx-arm64",
-              "version": "[6.0.36, 6.0.36]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.36, 6.0.36]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -105,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/opt/homebrew/Cellar/dotnet/9.0.101/libexec/sdk/9.0.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.428\\RuntimeIdentifierGraph.json"
         }
       }
     }
