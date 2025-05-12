@@ -9,27 +9,48 @@ const SignIn = () => {
     const [password, setPassword] = useState("");
     const navigation = useNavigation();
 
-    const submit = async () => {
-        if (!nationalId || !password) {
-            Alert.alert("Error", "กรุณากรอกข้อมูลให้ครบถ้วน");
+    const handleLogin = async () => {
+        if (!nationalId.trim() || !password) {
+            Alert.alert("แจ้งเตือน", "กรุณากรอกข้อมูลให้ครบถ้วน");
             return;
         }
 
         try {
-            const response = await axios.post('http://10.203.228.166:5000/tokens/login', { nationalId, password });
-            await SecureStore.setItemAsync("token", response.data.token);
+            const response = await axios.post("http://10.203.228.166:5000/tokens/login", {
+                nationalId,
+                password,
+            });
+
+            const token = response.data.token;
+            await SecureStore.setItemAsync("token", token);
+
             navigation.navigate("MainDrawer");
         } catch (error) {
-            Alert.alert("Error", error.response.status.tostring());
+            const status = error?.response?.status || "Unknown";
+            Alert.alert("เข้าสู่ระบบไม่สำเร็จ", `รหัสผิดพลาด: ${status}`);
         }
     };
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Sign In</Text>
-            <TextInput style={styles.input} placeholder="เลขประจำตัวประชาชน" value={nationalId} onChangeText={setNationalId} />
-            <TextInput style={styles.input} placeholder="รหัสผ่าน" value={password} onChangeText={setPassword} secureTextEntry />
-            <Button title="Login" onPress={submit} color="#007bff" />
+            <Text style={styles.title}>เข้าสู่ระบบ</Text>
+            <TextInput
+                style={styles.input}
+                placeholder="เลขประจำตัวประชาชน"
+                value={nationalId}
+                onChangeText={setNationalId}
+                keyboardType="number-pad"
+            />
+            <TextInput
+                style={styles.input}
+                placeholder="รหัสผ่าน"
+                value={password}
+                onChangeText={setPassword}
+                secureTextEntry
+            />
+            <View style={styles.buttonContainer}>
+                <Button title="เข้าสู่ระบบ" onPress={handleLogin} color="#007bff" />
+            </View>
         </View>
     );
 };
@@ -38,19 +59,26 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: "center",
-        alignItems: "center",
-        padding: 20,
+        paddingHorizontal: 20,
+        backgroundColor: "#fff",
     },
     title: {
-        fontSize: 24,
-        marginBottom: 20,
+        fontSize: 26,
+        fontWeight: "bold",
+        textAlign: "center",
+        marginBottom: 24,
     },
     input: {
         borderWidth: 1,
-        padding: 10,
-        marginBottom: 10,
-        borderRadius: 5,
-    }
+        borderColor: "#ccc",
+        borderRadius: 6,
+        padding: 12,
+        marginBottom: 16,
+        fontSize: 16,
+    },
+    buttonContainer: {
+        marginTop: 10,
+    },
 });
 
 export default SignIn;
