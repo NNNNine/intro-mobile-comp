@@ -45,9 +45,16 @@ public class Program
         for (int k = 0; k < (N / 2) + 1; k++){
             ReX[k] = ImX[k] = 0;
             for (int i = 0; i < N; i++) {
-                ReX[k] += x[i] * Math.Cos((double)2 * Math.PI * (double)k * (double)i / (double)N);
-                ImX[k] += -x[i] * Math.Sin((double)2 * Math.PI * (double)k * (double)i / (double)N);
+                ReX[k] += x[i] * Math.Cos((2 * Math.PI * k * i) / N);
+                ImX[k] += -x[i] * Math.Sin((2 * Math.PI * k * i) / N);
             }
+            ReX[k] = Math.Round(ReX[k]);
+            ImX[k] = Math.Round(ImX[k]);
+            if (ReX[k] == 0) ReX[k] = 0;
+            if (ImX[k] == 0) ImX[k] = 0;
+            // printf ReX[k], ImX[k];
+            // printf "ReX[%d] = %f, ImX[%d] = %f\n", k, ReX[k], k, ImX[k];
+            Console.WriteLine($"ReX[{k}] = {ReX[k]}, ImX[{k}] = {ImX[k]}");
         }
 
 
@@ -62,7 +69,7 @@ public class Program
 
 
             if (k == 0) ReX_[0] = ReX[0] / (double)N;
-            if (k == N / 2) ReX_[N / 2] = ReX[N / 2] / (double)N;
+            if (k == (N / 2) + 1) ReX_[(N / 2) + 1] = ReX[(N / 2) + 1] / (double)N;
         }
 
         StreamWriter SW = new StreamWriter(output_file);
@@ -71,6 +78,10 @@ public class Program
         for (int k = 0; k < (N / 2) + 1; k++) {
 
             double fraction = (double)k / (double)N;
+            ReX_[k] = Math.Round(ReX_[k]);
+            ImX_[k] = Math.Round(ImX_[k]);
+            if (ReX_[k] == 0) ReX_[k] = 0;
+            if (ImX_[k] == 0) ImX_[k] = 0;
             SW.WriteLine(k + "\t" + ReX_[k] + "\t" + ImX_[k] + "\t" + String.Format("{0:0.000000}", fraction * sampling_rate));
         }
 
