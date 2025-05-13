@@ -23,7 +23,7 @@ namespace ToDo.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseMySql("server=localhost;port=3307;user=root;password=123456;database=mobile_comp", Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.11.11-mariadb"));
+                optionsBuilder.UseMySql("server=10.202.205.96;port=3307;user=root;password=123456;database=mobile_comp", Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.11.11-mariadb"));
             }
         }
 
